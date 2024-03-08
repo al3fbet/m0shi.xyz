@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>m0shi.xyz</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+body {
+	background-color: black;
+}
+.social-icons .icon {
+  color: white;
+}
+.social-icons {
+    position: fixed;
+    top: 20px; /* Adjust the top position as needed */
+    left: 20px; /* Adjust the left position as needed */
+}
+
+/* Styles for individual social icons */
+.icon {
+    display: inline-block;
+    margin-right: 10px; /* Adjust the spacing between icons as needed */
+    color: #fff; /* Color of the icons */
+    font-size: 20px; /* Adjust the size of the icons as needed */
+    text-decoration: none;
+}
+/* Styles for hover effect on social icons */
+.icon:hover {
+    color: #FF5733; /* Change color on hover */
+}
+.banner {
+  font-family: 'Tinos', serif;
+  color: white; /* Set banner text color to white */
+  position: fixed;
+  top: 20px; /* Adjust the top position as needed */
+  right: 20px; /* Adjust the right position as needed */
+}
+
+</style>
+</head>
+<header>
+<div class="banner" style="font-family: 'Tinos', serif;">
+	<div class="banner">
+	<h1>mΩשhi.xyz</h1>
+<div class="social-icons">
+  <a href="mailto:bengeshem@outlook.com" class="icon email-icon"><i class="fas fa-envelope"></i></a>
+  <a href="https://al3fbet.github.io/" class="icon github-icon"><i class="fab fa-github"></i></a>
+  <a href="https://discord.com/users/ghetto204" class="icon discord-icon"><i class="fab fa-discord"></i></a>
+  <a href="https://instagram.com/all7zrdear" class="icon instagram-icon"><i class="fab fa-instagram"></i></a>
+</div>
+</div>
+</header>
+
+
+<main id="container">
+<div id="terminal">
+<!-- Terminal Bar -->
+<section id="terminal__bar">
+<div id="bar__buttons">
+<button class="bar__button" id="bar__button--exit">&#10005;</button>
+<button class="bar__button">&#9472;</button>
+<button class="bar__button">&#9723;</button>
+</div>
+<p id="bar__user">m0shi@home: ~</p>
+</section>
+<!-- Terminal Body -->
+<section id="terminal__body">
+<div id="terminal__prompt">
+<span id="terminal__prompt--user">ryan@m0shi.xyz:</span>
+<span id="terminal__prompt--location">~</span>
+<span id="terminal__prompt--bling">$ </span>
+<span id="terminal__prompt--msg"></span>
+<span id="terminal__prompt--cursor"></span>
+</div>
+<br>
+<div id="terminal__output"></div> <!-- output of execute command -->
+</section>
+</div>
+</main>
+<script>
+// Function to simulate typing effect
+function typeText(element, text, delay, callback) {
+  var index = 0;
+  var timer = setInterval(function() {
+    element.textContent += text[index++];
+    if (index === text.length) {
+      clearInterval(timer);
+      if (callback) callback();
+    }
+  }, delay);
+}
+
+// Initial command to type and execute
+var command = "cat /root/welcome.txt";
+
+// Simulate typing out the command
+typeText(document.getElementById("terminal__prompt--msg"), command, 100, function() {
+  // Command fully typed out, execute it
+  setTimeout(function() {
+    // Assuming 'welcome.txt' contains the greeting message
+  var greetingMessage = "<span style='color: yellow;'>Welcome to my developer page!</span><br><br> My name is Ryan.<br><br>I'm working on a few projects right now, one is a project that is called cipher of scribes, although I am currently focusing on more web development. <br><br>HTML, CSS, JS along with doing my own sysadmin work<br><br>I'm the founder and creator of The 101 Lab. All my projects will be on this page eventually after I finish structuring my sites and portfolio. Looking for people to work with that aren't on some shady stuff, I love learning, and studying in general. Torah study, theology, and spiritual matters are my main interests.<br><br>Coding is a passion of mine that I enjoy, and if I can use my skills that I gain to give glory to God, and spread His word all while working on some cool projects with some cool people.<br><br>Then, Amen.... Check out my <a href='https://al3fbet.github.io'><span style='color: yellow;'>Github Portfolio</a></span>!";
+    // Update terminal output with the greeting message
+    document.getElementById("terminal__output").textContent = greetingMessage;
+    document.getElementById("terminal__output").innerHTML = greetingMessage;
+    // Move cursor to the initial position
+    document.getElementById("terminal__prompt--cursor").style.display = "none"; // Hide cursor temporarily
+    setTimeout(function() {
+      document.getElementById("terminal__prompt--cursor").style.display = "inline-block"; // Show cursor again
+    }, 500); // Adjust timing as needed
+  }, 1000); // Adjust timing as needed
+});
+
+</script>
+</body>
+</html>
+
